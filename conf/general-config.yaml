@@ -1,0 +1,12 @@
+dataset_root: ./data/dataset
+splits_root:  ./data/splits
+models_root:  ./data/models
+results_root: ./data/logs
+reports_root: ./data/logs
+
+# results_root: /mnt/vast-kisski/home/m.akhondzadehtezer02/u12377/workspace/DATA/logs
+# reports_root: /mnt/vast-kisski/home/m.akhondzadehtezer02/u12377/workspace/DATA/logs
+default_model_configs: ./conf/model_configs.yaml
+default_data_configs: ./conf/data_configs.yaml
+
+ 

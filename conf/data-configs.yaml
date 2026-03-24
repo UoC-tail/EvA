@@ -1,0 +1,14 @@
+configs:
+  default:
+    training_nodes: 20
+    training_split_type: non-stratified
+    validation_nodes: 20
+    validation_split_type: non-stratified
+    test_nodes: 0.1
+    test_split_type: non-stratified
+  datasets:
+    - cora_ml
+    - citeseer
+    - pubmed
+    - amazon_computers
+    - amazon_photo

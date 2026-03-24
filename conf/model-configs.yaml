@@ -1,0 +1,137 @@
+configs:
+  GCNSVD:
+    n_filters: 64
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+  GCNJaccard:
+    n_filters: 64
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+  RGCN:
+    n_filters: 64
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 300
+  GNNGuard:
+    n_filters: 64
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+  GCN:
+    n_filters: 64
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+
+  DenseGCN:
+    n_filters: 64
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+
+  GAT:
+    hidden_dim: 64
+    heads: 1
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+
+  GPRGNN:
+    hidden: 64
+    propagation: 'GPR_prop'
+    K: 10
+    dropout_NN: 0.2
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+
+  DenseGPRGNN:
+    hidden: 64
+    propagation: 'GPR_prop'
+    K: 10
+    dropout_NN: 0.2
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+  
+  APPNP:
+    propagation: "PPNP"
+    alpha: 0.1
+    hidden: 64
+    K: 10
+    dropout_NN: 0.2
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+
+  ChebNetII:
+    n_filters: 64
+    K: 10
+    dropout_NN: 0.8
+    dropout_GPR: 0.5
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+
+  SoftMedian_GDC:
+    mean: "soft_median"
+    mean_kwargs:
+      temperature: 0.2
+    gdc_params:
+      k: 64
+      temperature: 0.2
+      alpha: 0.15 
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+    
+  SGC:
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 300
+    max_epochs: 3000
+
+               
+
+arxiv_configs:
+  GCN:
+    n_filters: 256
+    lr: 0.01
+    weight_decay: 0
+    patience: 200
+    max_epochs: 3000
+
+  GPRGNN:
+    hidden: 256
+    propagation: 'GPR_prop'
+    K: 10
+    dropout_NN: 0.2
+    lr: 0.01
+    weight_decay: 0
+    patience: 200
+    max_epochs: 3000
+
+  APPNP:
+    propagation: "PPNP"
+    alpha: 0.1
+    hidden: 256
+    K: 10
+    dropout_NN: 0.2
+    lr: 0.01
+    weight_decay: 0
+    patience: 200
+    max_epochs: 3000

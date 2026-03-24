@@ -1,0 +1,408 @@
+configs:
+  PRBCD:
+    epochs: 500
+    fine_tune_epochs: 100
+    keep_heuristic: 'WeightOnly'
+    search_space_size: 500_000
+    do_synchronize: True
+    lr_factor: 100
+    loss_type: tanhMargin
+
+
+  LRBCD:
+    epochs: 500
+    fine_tune_epochs: 0
+    with_early_stopping: False
+    keep_heuristic: 'WeightOnly'
+    search_space_size: 100_000
+    do_synchronize: True
+    lr_factor: 100
+    loss_type: tanhMargin
+  
+  greedy_rbcd:
+    block_size: 6_000_000
+    loss_type: tanhMargin
+  FGSM:
+    binary_attr: False
+    surrogate_model_label: Vanilla Dense GCN
+    attack_params:
+    loss_type: MCE
+  SGA:
+    direct: True
+    n_influencers: 3
+    loss_type: tanhMargin
+
+  DICE:
+    add_ratio: 0.6
+
+  LocalDICE:
+    add_ratio: 0.1
+
+  Nettack:
+    debug_val: True
+  PGA:
+    greedy_steps: 1
+    pre_ratio: 0.1
+    select_ratio: 0.6
+    influ_ratio: 0.8
+    select_policy: deg & margin
+    loss_type: tanhMarginMCE-0.5
+
+  PGD:
+    
+    epochs: 400
+    base_lr: 0.1
+    loss_type: tanhMargin
+
+  EvAttack:
+    n_steps: 10
+    mutation_rate: 0.01
+    tournament_size: 2
+    num_population: 1
+    num_cross_over: 30
+    mutation_toggle_rate: 0.0
+
+  ScaledEva:
+    n_steps: 200
+    mutation_rate: 0.02
+    tournament_size: 2
+    num_population: 128
+    num_cross_over: 30
+    mutation_toggle_rate: 0.0
+    capacity: 128
+    mutation_method: "idx_mutation"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+    
+
+  EvaConformal:
+    n_steps: 500
+    mutation_rate: 0.01
+    tournament_size: 2
+    num_population: 1024
+    num_cross_over: 30
+    mutation_toggle_rate: 0.0
+    capacity: 1024
+    mutation_method: "idx_mutation"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+  
+  EvAttackAccelerated:
+    n_steps: 1024
+    mutation_rate: 0.02
+    tournament_size: 2
+    num_population: 512
+    num_cross_over: 30
+    mutation_toggle_rate: 0.0
+    capacity: 256
+    mutation_method: "idx_mutation"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+    
+  EvAttackAcceleratedCE:
+    n_steps: 500
+    mutation_rate: 0.01
+    tournament_size: 2
+    num_population: 128
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 128
+    mutation_method: "uniform"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+  EvaCertAttack:
+    n_steps: 100
+    mutation_rate: 0.005
+    tournament_size: 2
+    num_population: 100
+    num_cross_over: 30
+    mutation_toggle_rate: 0.0
+    capacity: 256
+    mutation_method: "fixed_var"
+    mutation_config:
+      radius: 0.5
+
+  
+  EvAttackAcceleratedDebug:
+    n_steps: 50
+    mutation_rate: 0.005
+    tournament_size: 2
+    num_population: 256
+    num_cross_over: 30
+    mutation_toggle_rate: 0.0
+    capacity: 128
+    mutation_method: "fixed_var"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+  EVAFAST:
+    n_steps: 200
+    mutation_rate: 0.02
+    tournament_size: 2
+    capacity: 512
+    num_population: 512
+    num_cross_over: 20
+    mutation_toggle_rate: 0.00
+    mutation_method: 'adaptive'
+  
+  EvaLocal:
+    n_steps: 1024
+    mutation_rate: 0.01
+    tournament_size: 2
+    num_population: 1024
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 512
+    mutation_method: "idx_mutation"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+  
+  EVATARGET:
+    n_steps: 30
+    mutation_rate: 0.02
+    tourn  dament_size: 2
+    capacity: 1024
+    num_population: 1024
+    num_cross_over: 20
+    mutation_method: 'adaptive'
+    mutation_toggle_rate: 0.00
+    delta: 1.5
+  
+  EVACERT:
+    n_steps: 100
+    mutation_rate: 0.01
+    tournament_size: 2
+    capacity: 10
+    num_population: 128
+    num_cross_over: 20
+    mutation_method: 'adaptive'
+    mutation_toggle_rate: 0.00
+    p_emp: 0.5
+    n_samples_eval: 1000
+    pf_plus_att: 0
+    pf_minus_att: 0
+    pf_plus_adj: 0.01
+    pf_minus_adj: 0.6
+
+  EvAttackAcceleratedTanh:
+    n_steps: 1500
+    mutation_rate: 0.005
+    tournament_size: 2
+    num_population: 600
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 300
+    mutation_method: "idx_mutation"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+arxiv_configs:
+  PRBCD:
+    epochs: 500
+    fine_tune_epochs: 100
+    keep_heuristic: 'WeightOnly'
+    search_space_size: 3_000_000
+    do_synchronize: True
+    lr_factor: 100
+    loss_type: tanhMargin
+
+  LRBCD:
+    epochs: 400
+    fine_tune_epochs: 0
+    with_early_stopping: False
+    keep_heuristic: 'WeightOnly'
+    search_space_size: 3_000_000
+    do_synchronize: True
+    lr_factor: 100
+    local_factor: 0.25
+    loss_type: tanhMargin
+
+  EvAttack:
+    n_steps: 1000
+    mutation_rate: 0.005
+    tournament_size: 2
+    num_population: 32
+    num_cross_over: 30
+    mutation_toggle_rate: 0.0
+
+  EVAFAST:
+    n_steps: 200
+    mutation_rate: 0.02
+    tournament_size: 2
+    capacity: 64
+    num_population: 64
+    num_cross_over: 20
+    mutation_toggle_rate: 0.00
+    mutation_method: 'adaptive'
+
+  EvAttackAccelerated:
+    n_steps: 1000
+    mutation_rate: 0.02
+    tournament_size: 2
+    num_population: 180
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 45
+    mutation_method: "idx_mutation"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+  EvAttackAcceleratedTanh:
+    n_steps: 500
+    mutation_rate: 0.01
+    tournament_size: 2
+    num_population: 160
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 40
+    mutation_method: "idx_control"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+  EvAttackAcceleratedCE:
+    n_steps: 500
+    mutation_rate: 0.01
+    tournament_size: 2
+    num_population: 180
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 45
+    mutation_method: "uniform"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+  EVATARGET:
+    n_steps: 30
+    mutation_rate: 0.02
+    tournament_size: 2
+    capacity: 1024
+    num_population: 1024
+    num_cross_over: 20
+    mutation_toggle_rate: 0.00
+    delta: 1.5
+
+  ScaledEva:
+      n_steps: 300
+      mutation_rate: 0.02
+      tournament_size: 2
+      num_population: 180
+      num_cross_over: 10
+      mutation_toggle_rate: 0.0
+      capacity: 4
+      mutation_method: "idx_mutation"
+      mutation_config:
+        radius: 0.5
+      k_hops: 2
+
+
+products_configs:
+  PRBCD:
+    epochs: 500
+    fine_tune_epochs: 100
+    keep_heuristic: 'WeightOnly'
+    search_space_size: 300_000
+    do_synchronize: True
+    lr_factor: 100
+    loss_type: tanhMargin
+
+  LRBCD:
+    epochs: 400
+    fine_tune_epochs: 0
+    with_early_stopping: False
+    keep_heuristic: 'WeightOnly'
+    search_space_size: 3_000_000
+    do_synchronize: True
+    lr_factor: 100
+    local_factor: 0.25
+    loss_type: tanhMargin
+
+  EvAttack:
+    n_steps: 1000
+    mutation_rate: 0.005
+    tournament_size: 2
+    num_population: 32
+    num_cross_over: 30
+    mutation_toggle_rate: 0.0
+
+  EVAFAST:
+    n_steps: 200
+    mutation_rate: 0.02
+    tournament_size: 2
+    capacity: 64
+    num_population: 64
+    num_cross_over: 20
+    mutation_toggle_rate: 0.00
+    mutation_method: 'adaptive'
+
+  EvAttackAccelerated:
+    n_steps: 60
+    mutation_rate: 0.02
+    tournament_size: 2
+    num_population: 100
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 3
+    mutation_method: "idx_mutation"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+  EvAttackAcceleratedTanh:
+    n_steps: 500
+    mutation_rate: 0.01
+    tournament_size: 2
+    num_population: 160
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 40
+    mutation_method: "idx_control"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+  EvAttackAcceleratedCE:
+    n_steps: 500
+    mutation_rate: 0.01
+    tournament_size: 2
+    num_population: 180
+    num_cross_over: 10
+    mutation_toggle_rate: 0.0
+    capacity: 45
+    mutation_method: "uniform"
+    mutation_config:
+      radius: 0.5
+    k_hops: 2
+
+  EVATARGET:
+    n_steps: 30
+    mutation_rate: 0.02
+    tournament_size: 2
+    capacity: 1024
+    num_population: 1024
+    num_cross_over: 20
+    mutation_toggle_rate: 0.00
+    delta: 1.5
+
+  ScaledEva:
+      n_steps: 300
+      mutation_rate: 0.02
+      tournament_size: 2
+      num_population: 180
+      num_cross_over: 10
+      mutation_toggle_rate: 0.0
+      capacity: 4
+      mutation_method: "idx_mutation"
+      mutation_config:
+        radius: 0.5
+      k_hops: 2

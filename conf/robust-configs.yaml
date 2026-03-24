@@ -1,0 +1,148 @@
+configs:
+  training:
+    lr: 0.01
+    weight_decay: 0.001
+    patience: 200
+    max_epochs: 3000
+    pre_train_epochs: 50
+  
+  train_attack_configs:
+    PRBCD:
+      epochs: 20
+      fine_tune_epochs: 0
+      keep_heuristic: 'WeightOnly'
+      search_space_size: 1_000_000
+      do_synchronize: True
+      attack_loss_type: 'tanhMargin'
+      with_early_stopping: False
+    LRBCD:
+      epochs: 20
+      fine_tune_epochs: 0
+      keep_heuristic: 'WeightOnly'
+      lr_factor: 2000
+      search_space_size: 1_000_000
+      do_synchronize: True
+      attack_loss_type: 'tanhMargin'
+      with_early_stopping: False
+    EVAFAST:
+      n_steps: 20
+      mutation_rate: 0.02
+      tournament_size: 2
+      capacity: 512
+      num_population: 512
+      num_cross_over: 20
+      mutation_toggle_rate: 0.00
+    EvAttackAccelerated:
+      n_steps: 50
+      mutation_rate: 0.005
+      tournament_size: 2
+      num_population: 512
+      num_cross_over: 30
+      mutation_toggle_rate: 0.0
+      capacity: 256
+      mutation_method: "fixed_var"
+      mutation_config:
+        radius: 0.5
+      k_hops: 2
+  
+  val_attack_configs:
+    PRBCD:
+      epochs: 20
+      fine_tune_epochs: 0
+      keep_heuristic: 'WeightOnly'
+      search_space_size: 1_000_000
+      do_synchronize: True
+      attack_loss_type: 'tanhMargin'
+      with_early_stopping: False
+    LRBCD:
+      epochs: 20
+      fine_tune_epochs: 0
+      keep_heuristic: 'WeightOnly'
+      lr_factor: 2000
+      search_space_size: 1_000_000
+      do_synchronize: True
+      attack_loss_type: 'tanhMargin'
+      with_early_stopping: False
+    EVAFAST:
+      n_steps: 20
+      mutation_rate: 0.02
+      tournament_size: 2
+      capacity: 512
+      num_population: 512
+      num_cross_over: 20
+      mutation_toggle_rate: 0.00
+    EvAttackAccelerated:
+      n_steps: 50
+      mutation_rate: 0.005
+      tournament_size: 2
+      num_population: 512
+      num_cross_over: 5
+      mutation_toggle_rate: 0.0
+      capacity: 256
+      mutation_method: "fixed_var"
+      mutation_config:
+        radius: 0.5
+      k_hops: 2
+
+robust_arxiv_configs:
+  training:
+    lr: 0.01
+    weight_decay: 0
+    patience: 200
+    max_epochs: 3000
+  
+  train_attack_configs:
+    PRBCD:
+      epochs: 20
+      fine_tune_epochs: 0
+      keep_heuristic: 'WeightOnly'
+      search_space_size: 3_000_000
+      do_synchronize: True
+      attack_loss_type: 'tanhMargin'
+      with_early_stopping: False
+    LRBCD:
+      epochs: 20
+      fine_tune_epochs: 0
+      keep_heuristic: 'WeightOnly'
+      lr_factor: 4000
+      search_space_size: 3_000_000
+      do_synchronize: True
+      attack_loss_type: 'tanhMargin'
+      with_early_stopping: False
+      local_factor: 0.25
+    EVAFAST:
+      n_steps: 20
+      mutation_rate: 0.02
+      tournament_size: 2
+      capacity: 64
+      num_population: 64
+      num_cross_over: 20
+      mutation_toggle_rate: 0.00
+  
+  val_attack_configs:
+    PRBCD:
+      epochs: 20
+      fine_tune_epochs: 0
+      keep_heuristic: 'WeightOnly'
+      search_space_size: 3_000_000
+      do_synchronize: True
+      attack_loss_type: 'tanhMargin'
+      with_early_stopping: False
+    LRBCD:
+      epochs: 20
+      fine_tune_epochs: 0
+      keep_heuristic: 'WeightOnly'
+      lr_factor: 4000
+      search_space_size: 3_000_000
+      do_synchronize: True
+      attack_loss_type: 'tanhMargin'
+      with_early_stopping: False
+      local_factor: 0.25
+    EVAFAST:
+      n_steps: 20
+      mutation_rate: 0.02
+      tournament_size: 2
+      capacity: 64
+      num_population: 64
+      num_cross_over: 20
+      mutation_toggle_rate: 0.00
